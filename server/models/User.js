@@ -13,12 +13,12 @@ const userSchema = new mongoose.Schema({
         required:true,
         minlength:9
     },
-    profilepic:{type:String,
+    profilePic:{type:String,
         default:""
     },
     bio:{type:String
     },
     
 },{timestamps:true});
-const user=mongoose.model("User",userSchema);
+const User=mongoose.model("User",userSchema);
 export default User;

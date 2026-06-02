@@ -3,6 +3,7 @@ import "dotenv/config";
 import cors from "cors";
 import http from "http";
 import { connectDB } from "./lib/db.js";
+import { verifyCloudinaryConfig } from "./lib/cloudinary.js";
 import userRouter from "./routes/userRoutes.js";
 import messageRouter from "./routes/messageRoutes.js";
 import {Server} from "socket.io";
@@ -20,7 +21,7 @@ export const io=new Server(server,{
 export const userSocketMap={};//{userId:socketId}
 
 //socket.io connection handler
-io.on("connection",()=>{
+io.on("connection",(socket)=>{
     const userId=socket.handshake.query.userId;
     console.log("User Connected", userId);
 
@@ -48,6 +49,7 @@ app.use("/api/auth",userRouter)
 app.use("/api/messages",messageRouter);
 //connect to mongodb
 await connectDB();
+await verifyCloudinaryConfig();
 
 const PORT=process.env.PORT || 5000;
 server.listen(PORT,()=>console.log("Server is running on PORT:"+PORT));

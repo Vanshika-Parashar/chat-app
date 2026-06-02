@@ -30,12 +30,12 @@ export const getUsersForSidebar=async(req,res)=>{
 //Get all messages for selected user
 export const getMessages=async(req,res)=>{
     try{
-        const {id:selecetedUserId}=req.params;
+        const {id:selectedUserId}=req.params;
         const myId=req.user._id;
 
         const messages=await Message.find({
             $or:[
-                {senderId:myId,receiverId:selecetedUserId},
+                {senderId:myId,receiverId:selectedUserId},
                 {senderId:selectedUserId,receiverId:myId},
             ]
         })
