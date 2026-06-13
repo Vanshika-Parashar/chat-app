@@ -20,12 +20,17 @@ export const AuthProvider=({children})=>{
     const checkAuth=async()=>{
         try{
             const{data}=await axios.get("/api/auth/check");
+            //add
+            console.log("chaeck auth success",data);
             if(data.success){
                 setAuthUser(data.user)
                 connectSocket(data.user)
             }
         }catch(error){
-            toast.error(error.message)
+            //toast.error(error.message)
+            //add
+            console.log("CHECK AUTH ERROR", error.response?.data);
+            toast.error(error.response?.data?.message || error.message);
         }
 }
 
@@ -100,6 +105,8 @@ const updateProfile=async(body)=>{
     }
 
     useEffect(()=>{
+        //add
+        console.log("Stored Token:", token);
         if(token){
             axios.defaults.headers.common["token"]=token;
         }
