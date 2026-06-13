@@ -31,7 +31,7 @@ const ProfilePage = () => {
     
   }
   return (
-    <div className='min-h-screen bg-cover bg-no-repeat flex items-center
+    <div className='min-h-screen bg-gradient-to-br from-sky-100 via-white to-sky-50 flex items-center
     justify-center'>
       <div className='w-5/6 max-w-2xl backdrop-blur-2xl text-gray-300 border-2 border-gray-600 flex items-center justify-between max-sm:flex-col-reverse
       rounded-lg'>
@@ -47,14 +47,14 @@ const ProfilePage = () => {
           </label>
           <input onChange={(e)=>setName(e.target.value)} value={name}
           type="text" required placeholder='Your name'className='p-2 border
-          border-gray-500 rounded-md focus:outline-none focus:ring-2
-          focus:ring-violet-500'/>
+           border-sky-200 rounded-md focus:outline-none focus:ring-2
+          focus:ring-sky-400'/>
           <textarea onChange={(e)=>setBio(e.target.value)} value={bio}
           placeholder='Write profile bio' required className='p-2 border
-          border-gray-500 rounded-md focus:outline-none focus:ring-2
-          focus:ring-violet-500' rows={4}></textarea>
-          <button type="submit" className='bg-gradient-to-r from-purple-400
-          to-violet-600 text-white p-2 rounded-full text-lg cursor-pointer'>Save</button>
+          border-sky-200 rounded-md focus:outline-none focus:ring-2
+          focus:ring-sky-400' rows={4}></textarea>
+          <button type="submit" className='bg-gradient-to-r from-sky-400
+          to-sky-500 text-white p-2 rounded-full text-lg cursor-pointer hover:from-sky-500 hover:to-sky-600'>Save</button>
         </form>
         <img className={`max-w-44 aspect-square rounded-full mx-10 max-sm:mt-10 ${selectedImg && 'rounded-full'}`}
         src={authUser?.profilePic || assets.logo_icon} alt="" />

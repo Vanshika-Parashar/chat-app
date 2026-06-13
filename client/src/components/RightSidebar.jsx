@@ -16,7 +16,7 @@ const RightSidebar = () => {
     )
   },[messages])
   return selectedUser && (
-    <div className={`bg-[#8185B2]/10 text-white w-[320px] relative overflow-y-scroll
+     <div className={`bg-sky-50 text-slate-700 w-[320px] relative overflow-y-scroll
     ${selectedUser ? "max-md:hidden" : ""}`}>
 
 
@@ -29,10 +29,10 @@ const RightSidebar = () => {
             {onlineUsers.includes(selectedUser._id)&& <p className='w-2 h-2 rounded-full bg-green-500'></p>}
             {selectedUser.fullName}
             </h1>
-            <p  className='px-10 text-center text-gray-300 leading-6'>
+            <p  className='px-10 text-center text-slate-500 leading-6'>
             {selectedUser.bio}</p>
       </div>
-      <hr className="border-[#ffffff50] my-4"/>
+      <hr className="border-sky-200 my-4"/>
       <div className="px-5 text-xs">
         <p>Media</p>
         <div  className='mt-2 max-h-[200px] overflow-y-scroll grid grid-cols-2
@@ -49,8 +49,8 @@ gap-4 opacity-80'>
 
       </div>
       <button onClick={()=>logout()} className='absolute bottom-5 left-1/2 transform -translate-x-1/2
-      bg-gradient-to-r from-purple-400 to-violet-600 text-white border-none
-      text-sm font-light py-2 px-20 rounded-full cursor-pointer'>
+      bg-gradient-to-r from-sky-400 to-sky-500 text-white border-none
+      text-sm font-light py-2 px-20 rounded-full cursor-pointer hover:from-sky-500 hover:to-sky-600'>
         Logout
       </button>
     </div>

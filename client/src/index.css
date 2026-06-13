@@ -6,6 +6,10 @@
   font-family: "Outfit", sans-serif;
 }
 
+body{
+  background-color: #f0f9ff;
+}
+
 ::-webkit-scrollbar{
   display:none;
 }
